@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORRE CON NOSOTROS — Campaña Resiliencia & Empatía | NexaDigital</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,700;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tierra: #c8552a;
+    --dorado: #e8a020;
+    --noche: #0f0e0c;
+    --crema: #f5f0e8;
+    --musgo: #3d5a3e;
+    --polvo: #b8a898;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--noche);
+    color: var(--crema);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6vw 8vw;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200,85,42,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 20% 80%, rgba(61,90,62,0.25) 0%, transparent 60%),
+      linear-gradient(160deg, #0f0e0c 0%, #1a1410 50%, #0c0f0c 100%);
+  }
+
+  /* Pista de corredores decorativa */
+  .track-lines {
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    height: 90%;
+    opacity: 0.07;
+  }
+  .track-lines::before,
+  .track-lines::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--crema);
+  }
+  .track-lines::before { inset: 0; }
+  .track-lines::after { inset: 12%; }
+
+  .track-inner {
+    position: absolute;
+    inset: 24%;
+    border-radius: 50%;
+    border: 2px solid var(--crema);
+  }
+
+  .label-top {
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--tierra);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .label-top::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--tierra);
+  }
+
+  .hero-title {
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 13vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    color: var(--crema);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title span.accent {
+    color: var(--tierra);
+    display: block;
+  }
+
+  .hero-subtitle {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    color: var(--dorado);
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+    line-height: 1.4;
+  }
+
+  .hero-body {
+    position: relative;
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    color: var(--polvo);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--tierra);
+    color: var(--crema);
+    text-decoration: none;
+    padding: 1.1rem 2.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .hero-cta:hover { background: var(--dorado); color: var(--noche); transform: translateX(6px); }
+  .hero-cta .arrow { font-size: 1.3rem; }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 6vw;
+    right: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.5;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-badge span { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; }
+  .hero-badge .chevron { font-size: 1.5rem; }
+
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* ── QUOTE BREAK ── */
+  .quote-break {
+    background: var(--tierra);
+    padding: 5vw 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-break::before {
+    content: '"';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25vw;
+    position: absolute;
+    top: -5vw;
+    left: 4vw;
+    color: rgba(0,0,0,0.15);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-break blockquote {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.4rem, 3.5vw, 3rem);
+    line-height: 1.35;
+    color: var(--crema);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .quote-break cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.6);
+  }
+
+  /* ── PILLARS ── */
+  .pillars {
+    padding: 8vw 8vw;
+    background: var(--noche);
+  }
+  .section-header {
+    margin-bottom: 4rem;
+  }
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--tierra);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-tag::before { content:''; width:30px; height:2px; background:var(--tierra); }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1;
+    color: var(--crema);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .pillar {
+    background: #161412;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: default;
+  }
+  .pillar:hover { transform: translateY(-6px); }
+  .pillar::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--tierra);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .pillar:hover::before { transform: scaleX(1); }
+
+  .pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(200,85,42,0.15);
+    line-height: 1;
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    transition: color 0.3s;
+  }
+  .pillar:hover .pillar-num { color: rgba(200,85,42,0.3); }
+
+  .pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .pillar h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--dorado);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+  .pillar p {
+    font-size: 0.92rem;
+    color: var(--polvo);
+    line-height: 1.75;
+  }
+
+  /* ── MCFARLAND SECTION ── */
+  .mcfarland {
+    background: var(--musgo);
+    padding: 8vw 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .mcfarland::after {
+    content: 'McFarland';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20vw;
+    position: absolute;
+    bottom: -4vw; right: -2vw;
+    color: rgba(0,0,0,0.2);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .mcfarland-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+  }
+
+  .mcfarland-left {}
+  .mcfarland-left .section-title { color: var(--crema); }
+
+  .mcfarland-visual {
+    position: relative;
+    aspect-ratio: 4/3;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(245,240,232,0.1);
+  }
+
+  .film-strip {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0.6;
+  }
+  .film-frame {
+    width: 60px;
+    height: 45px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .mcfarland-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--crema);
+    text-align: center;
+    padding: 0 2rem;
+    line-height: 1.5;
+  }
+
+  .lessons-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .lesson-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .lesson-dot {
+    width: 8px; height: 8px;
+    background: var(--dorado);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  .lesson-text {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.85);
+    line-height: 1.6;
+  }
+
+  /* ── ENCUESTA ── */
+  .survey {
+    background: #0a0908;
+    padding: 8vw 8vw;
+    position: relative;
+  }
+
+  .survey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .survey-intro p {
+    font-size: 0.97rem;
+    color: var(--polvo);
+    line-height: 1.8;
+    margin-top: 1.5rem;
+  }
+
+  .survey-form {
+    background: #161412;
+    padding: 3rem;
+    border-left: 3px solid var(--tierra);
+  }
+
+  .survey-form h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--dorado);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .q-item {
+    margin-bottom: 2rem;
+  }
+  .q-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--crema);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  .q-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .q-btn {
+    padding: 0.5rem 1.1rem;
+    background: transparent;
+    border: 1px solid rgba(245,240,232,0.2);
+    color: var(--polvo);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+  .q-btn:hover, .q-btn.active {
+    background: var(--tierra);
+    border-color: var(--tierra);
+    color: var(--crema);
+  }
+
+  .scale-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .scale-label {
+    font-size: 0.72rem;
+    color: var(--polvo);
+    white-space: nowrap;
+  }
+  .scale-dots {
+    display: flex;
+    gap: 0.4rem;
+    flex: 1;
+    justify-content: center;
+  }
+  .scale-dot {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(245,240,232,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem;
+    color: var(--polvo);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .scale-dot:hover, .scale-dot.active {
+    background: var(--tierra); border-color: var(--tierra); color: white;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--tierra);
+    color: var(--crema);
+    border: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1.5rem;
+  }
+  .submit-btn:hover { background: var(--dorado); color: var(--noche); transform: scale(1.02); }
+
+  /* ── AFICHE / POSTER ── */
+  .poster-section {
+    padding: 8vw 8vw;
+    background: var(--noche);
+  }
+  .poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+  .poster-card {
+    aspect-ratio: 2/3;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.4s;
+  }
+  .poster-card:hover { transform: scale(1.02); z-index: 2; }
+
+  .poster-card:nth-child(1) { background: linear-gradient(160deg, var(--musgo) 0%, #1a2a1a 100%); }
+  .poster-card:nth-child(2) { background: linear-gradient(160deg, #2a1a0a 0%, var(--tierra) 100%); }
+  .poster-card:nth-child(3) { background: linear-gradient(160deg, #1a1508 0%, #5a4510 100%); }
+
+  .poster-bg-num {
+    font-family: 'Bebas Neue', sans-serif;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18rem;
+    color: rgba(0,0,0,0.2);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .poster-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .poster-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--crema);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    position: relative;
+    letter-spacing: 0.03em;
+  }
+  .poster-card p {
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.5;
+    position: relative;
+  }
+
+  /* ── STATS ── */
+  .stats-row {
+    background: var(--tierra);
+    padding: 5vw 8vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .stat-item {
+    background: rgba(0,0,0,0.2);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .stat-item:hover { background: rgba(0,0,0,0.35); }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--crema);
+    line-height: 1;
+    display: block;
+  }
+  .stat-desc {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* ── COMPROMISO ── */
+  .commitment {
+    padding: 8vw 8vw;
+    background: #0f0e0c;
+    text-align: center;
+  }
+  .commitment .section-title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    margin: 1rem 0 2rem;
+  }
+  .commitment p {
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+    color: var(--polvo);
+    line-height: 1.8;
+  }
+
+  .pledge-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .pledge-input {
+    background: #161412;
+    border: 1px solid rgba(245,240,232,0.15);
+    border-bottom: 2px solid var(--tierra);
+    color: var(--crema);
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .pledge-input:focus { border-bottom-color: var(--dorado); }
+  .pledge-input::placeholder { color: var(--polvo); opacity: 0.5; }
+
+  .pledge-select {
+    background: #161412;
+    border: 1px solid rgba(245,240,232,0.15);
+    border-bottom: 2px solid var(--tierra);
+    color: var(--crema);
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .pledge-textarea {
+    background: #161412;
+    border: 1px solid rgba(245,240,232,0.15);
+    border-bottom: 2px solid var(--tierra);
+    color: var(--crema);
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.3s;
+  }
+  .pledge-textarea:focus { border-bottom-color: var(--dorado); }
+  .pledge-textarea::placeholder { color: var(--polvo); opacity: 0.5; }
+
+  .pledge-btn {
+    padding: 1.3rem;
+    background: var(--noche);
+    color: var(--crema);
+    border: 2px solid var(--crema);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .pledge-btn:hover { background: var(--crema); color: var(--noche); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #000;
+    padding: 3rem 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid rgba(245,240,232,0.07);
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--tierra);
+    letter-spacing: 0.1em;
+  }
+  .footer-logo span { color: var(--crema); }
+  footer p {
+    font-size: 0.78rem;
+    color: var(--polvo);
+    opacity: 0.5;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(30px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.8s ease forwards; }
+  .delay-1 { animation-delay: 0.15s; }
+  .delay-2 { animation-delay: 0.3s; }
+  .delay-3 { animation-delay: 0.45s; }
+  .delay-4 { animation-delay: 0.6s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .mcfarland-inner,
+    .survey-grid,
+    .poster-grid,
+    .stats-row { grid-template-columns: 1fr; }
+    .mcfarland::after { display: none; }
+    .poster-card { aspect-ratio: 3/2; }
+  }
+
+  /* Success message */
+  .success-msg {
+    display: none;
+    background: var(--musgo);
+    color: var(--crema);
+    padding: 1.5rem;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="track-lines"><div class="track-inner"></div></div>
+
+  <p class="label-top fade-up">NexaDigital · Campaña Interna 2025</p>
+
+  <h1 class="hero-title fade-up delay-1">
+    CORRE<br>
+    <span class="accent">CON</span><br>
+    NOSOTROS
+  </h1>
+
+  <p class="hero-subtitle fade-up delay-2">
+    Como en McFarland, los grandes equipos no nacen de talentos perfectos — nacen de personas que se levantan juntas.
+  </p>
+
+  <p class="hero-body fade-up delay-3">
+    En NexaDigital creemos que la <strong>resiliencia</strong> y la <strong>empatía</strong> son las verdaderas tecnologías que nos hacen crecer. Esta campaña es una invitación a correr esa carrera juntos.
+  </p>
+
+  <a href="#pillars" class="hero-cta fade-up delay-4">
+    Descubre la campaña <span class="arrow">→</span>
+  </a>
+
+  <div class="hero-badge">
+    <span>Scroll</span>
+    <span class="chevron">↓</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ QUOTE -->
+<div class="quote-break">
+  <blockquote>
+    "Más que educación, más que experiencia, más que formación — el nivel de resiliencia de una persona determinará quién tiene éxito y quién fracasa."
+    <cite>— Diane L. Coutu, Harvard Business Review</cite>
+  </blockquote>
+</div>
+
+<!-- ═══════════════════════════════════════════════ PILLARS -->
+<section class="pillars" id="pillars">
+  <div class="section-header">
+    <p class="section-tag">Los pilares</p>
+    <h2 class="section-title">TRES MANERAS<br>DE CORRER MÁS LEJOS</h2>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <span class="pillar-num">01</span>
+      <span class="pillar-icon">👁️</span>
+      <h3>Enfrentar la Realidad</h3>
+      <p>Los equipos resilientes no se consuelan con ilusiones. Miran de frente los obstáculos — deadlines imposibles, fricción de equipo, crisis de cliente — y actúan desde la claridad, no desde el miedo. En NexaDigital, nombrar el problema es el primer acto de coraje.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">02</span>
+      <span class="pillar-icon">🧭</span>
+      <h3>Construir Sentido</h3>
+      <p>La adversidad sin propósito destruye. Viktor Frankl sobrevivió Auschwitz encontrando significado. Tú puedes convertir un sprint fallido, un producto rechazado o un cliente difícil en una lección que define tu carrera. El sentido transforma la dificultad en impulso.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">03</span>
+      <span class="pillar-icon">🔧</span>
+      <h3>Ingenio Ritualizado</h3>
+      <p>Los bricoleurs improvisan con lo que tienen. No esperan recursos perfectos para entregar valor. En nuestros equipos, la creatividad bajo presión no es un accidente — es una práctica deliberada que entrenamos juntos cada semana.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">04</span>
+      <span class="pillar-icon">🧠</span>
+      <h3>Empatía Cognitiva</h3>
+      <p>Entender cómo piensa tu compañero de equipo no es un lujo — es una ventaja competitiva. Los líderes con empatía cognitiva comunican con precisión, generan confianza más rápido y construyen soluciones que realmente resuelven el problema del otro lado.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">05</span>
+      <span class="pillar-icon">❤️</span>
+      <h3>Empatía Emocional</h3>
+      <p>Sentir con el otro activa los mismos circuitos cerebrales que el dolor propio. Cuando un colega está desbordado, tu presencia genuina — sin soluciones inmediatas, solo escucha activa — es la herramienta más poderosa que tienes en el kit de trabajo.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">06</span>
+      <span class="pillar-icon">🤝</span>
+      <h3>Interés Empático</h3>
+      <p>Saber qué necesita el otro de ti — no lo que tú creerías útil — es el nivel más alto de la empatía. Requiere atención sostenida, desapego del ego y la voluntad de servir incluso cuando no hay reconocimiento inmediato. Es la base de cualquier colaboración duradera.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ STATS -->
+<div class="stats-row">
+  <div class="stat-item">
+    <span class="stat-num">3×</span>
+    <span class="stat-desc">más productivos los equipos con alta empatía</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">70%</span>
+    <span class="stat-desc">de crisis laborales se superan con resiliencia entrenada</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">6</span>
+    <span class="stat-desc">pilares que definen nuestra cultura en NexaDigital</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">∞</span>
+    <span class="stat-desc">potencial cuando corremos juntos</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ MCFARLAND -->
+<section class="mcfarland">
+  <div class="mcfarland-inner">
+    <div class="mcfarland-left">
+      <p class="section-tag">Inspiración</p>
+      <h2 class="section-title">LO QUE<br>MCFARLAND<br>NOS ENSEÑÓ</h2>
+      <div class="lessons-list">
+        <div class="lesson-item">
+          <div class="lesson-dot"></div>
+          <p class="lesson-text"><strong>El entrenador vio lo que nadie más vio.</strong> La empatía cognitiva permite descubrir el potencial oculto en cada colega, incluso cuando ellos mismos no lo perciben.</p>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-dot"></div>
+          <p class="lesson-text"><strong>Corrieron con lo que tenían.</strong> Sin zapatillas de lujo ni pista oficial — puro ingenio, cuerpos entrenados en el campo. En NexaDigital: entregamos valor con los recursos del presente, no del futuro ideal.</p>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-dot"></div>
+          <p class="lesson-text"><strong>El equipo fue la ventaja competitiva.</strong> Ninguno era el más rápido individualmente. Juntos, eran imbatibles. La resiliencia colectiva supera siempre a la individual.</p>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-dot"></div>
+          <p class="lesson-text"><strong>Encontraron sentido más allá del trabajo.</strong> Cada carrera era un acto de dignidad para sus familias. Cuando tu trabajo tiene significado más profundo, la adversidad no te derrumba — te define.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mcfarland-visual">
+      <div class="film-strip">
+        <div class="film-frame">🏃</div>
+        <div class="film-frame">🌾</div>
+        <div class="film-frame">🏆</div>
+        <div class="film-frame">👨‍👩‍👧‍👦</div>
+      </div>
+      <p class="mcfarland-quote">"No son solo corredores.<br>Son los chicos de McFarland.<br>Y eso significa algo."</p>
+      <p style="font-size:0.75rem; color:rgba(245,240,232,0.4); letter-spacing:0.2em; text-transform:uppercase; position:relative;">McFarland, USA · 2015</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ AFICHES -->
+<section class="poster-section">
+  <div class="section-header">
+    <p class="section-tag">Afiches de campaña</p>
+    <h2 class="section-title">TRES MENSAJES.<br>UNA CULTURA.</h2>
+  </div>
+
+  <div class="poster-grid">
+    <div class="poster-card">
+      <div class="poster-bg-num">1</div>
+      <span class="poster-emoji">🏃‍♀️</span>
+      <h3>LA PISTA NO ES PERFECTA. TÚ TAMPOCO. CORRE.</h3>
+      <p>La resiliencia no espera condiciones ideales. Actúa desde donde estás.</p>
+    </div>
+    <div class="poster-card">
+      <div class="poster-bg-num">2</div>
+      <span class="poster-emoji">👂</span>
+      <h3>ESCUCHA CON LOS OJOS. SIENTE CON EL CEREBRO.</h3>
+      <p>La empatía real combina emoción e inteligencia. Entrena los dos.</p>
+    </div>
+    <div class="poster-card">
+      <div class="poster-bg-num">3</div>
+      <span class="poster-emoji">🌱</span>
+      <h3>EL EQUIPO QUE CAE JUNTO SE LEVANTA MÁS FUERTE.</h3>
+      <p>La adversidad compartida construye vínculos que ningún teambuilding puede fabricar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ ENCUESTA -->
+<section class="survey" id="survey">
+  <div class="section-header">
+    <p class="section-tag">Diagnóstico de equipo</p>
+    <h2 class="section-title">¿DÓNDE<br>ESTÁS TÚ?</h2>
+  </div>
+
+  <div class="survey-grid">
+    <div class="survey-intro">
+      <p>Antes de cambiar la cultura, necesitamos entender el punto de partida. Esta encuesta anónima nos ayuda a identificar dónde tenemos oportunidades reales de crecer en resiliencia y empatía como equipo.</p>
+      <p style="margin-top:1rem;">Los resultados se compartirán en el próximo All-Hands y servirán para diseñar las acciones concretas del trimestre.</p>
+    </div>
+
+    <div class="survey-form">
+      <h3>Encuesta Rápida — 5 minutos</h3>
+
+      <div class="q-item">
+        <p class="q-label">1. Cuando encuentro un obstáculo inesperado en un proyecto, mi primera reacción habitual es:</p>
+        <div class="q-options" id="q1">
+          <button class="q-btn" onclick="selectBtn(this,'q1')">Busco soluciones de inmediato</button>
+          <button class="q-btn" onclick="selectBtn(this,'q1')">Me frustro, luego actúo</button>
+          <button class="q-btn" onclick="selectBtn(this,'q1')">Pido ayuda al equipo</button>
+          <button class="q-btn" onclick="selectBtn(this,'q1')">Evito el problema</button>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <p class="q-label">2. En una semana de alta presión, ¿qué tan seguido revisas el estado emocional de tus colegas cercanos?</p>
+        <div class="q-options" id="q2">
+          <button class="q-btn" onclick="selectBtn(this,'q2')">Siempre</button>
+          <button class="q-btn" onclick="selectBtn(this,'q2')">Con frecuencia</button>
+          <button class="q-btn" onclick="selectBtn(this,'q2')">Rara vez</button>
+          <button class="q-btn" onclick="selectBtn(this,'q2')">Nunca</button>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <p class="q-label">3. ¿Qué tan claramente conectas tu trabajo diario con un propósito más grande?</p>
+        <div class="scale-row">
+          <span class="scale-label">Nada</span>
+          <div class="scale-dots" id="q3">
+            <div class="scale-dot" onclick="selectScale(this,'q3')">1</div>
+            <div class="scale-dot" onclick="selectScale(this,'q3')">2</div>
+            <div class="scale-dot" onclick="selectScale(this,'q3')">3</div>
+            <div class="scale-dot" onclick="selectScale(this,'q3')">4</div>
+            <div class="scale-dot" onclick="selectScale(this,'q3')">5</div>
+          </div>
+          <span class="scale-label">Totalmente</span>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <p class="q-label">4. Cuando un colega está desbordado, ¿qué haces normalmente?</p>
+        <div class="q-options" id="q4">
+          <button class="q-btn" onclick="selectBtn(this,'q4')">Ofrezco ayuda concreta</button>
+          <button class="q-btn" onclick="selectBtn(this,'q4')">Escucho sin soluciones</button>
+          <button class="q-btn" onclick="selectBtn(this,'q4')">Lo noto pero no actúo</button>
+          <button class="q-btn" onclick="selectBtn(this,'q4')">Me enfoco en mi trabajo</button>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <p class="q-label">5. ¿En qué área te gustaría que NexaDigital invirtiera más?</p>
+        <div class="q-options" id="q5">
+          <button class="q-btn" onclick="selectBtn(this,'q5')">Espacios de escucha</button>
+          <button class="q-btn" onclick="selectBtn(this,'q5')">Talleres de resiliencia</button>
+          <button class="q-btn" onclick="selectBtn(this,'q5')">Liderazgo empático</button>
+          <button class="q-btn" onclick="selectBtn(this,'q5')">Gestión del estrés</button>
+        </div>
+      </div>
+
+      <button class="submit-btn" onclick="submitSurvey()">ENVIAR RESPUESTAS →</button>
+      <div class="success-msg" id="successMsg">✓ ¡Gracias! Tu voz construye nuestra cultura.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ COMPROMISO -->
+<section class="commitment">
+  <p class="section-tag" style="justify-content:center;">Tu compromiso</p>
+  <h2 class="section-title">YO CORRO<br>CON USTEDES</h2>
+  <p>Firma tu compromiso personal. No es una promesa de ser perfecto — es la decisión de intentarlo, de levantarte, de escuchar cuando cueste, de correr incluso cuando los pies duelan.</p>
+
+  <div class="pledge-form">
+    <input type="text" class="pledge-input" placeholder="Tu nombre y área" id="pledgeName">
+    <select class="pledge-select" id="pledgeSelect">
+      <option value="" disabled selected>¿Con cuál pilar te comprometes primero?</option>
+      <option>Enfrentar la realidad sin evasión</option>
+      <option>Construir sentido en momentos difíciles</option>
+      <option>Improvisar con lo que tengo</option>
+      <option>Practicar empatía cognitiva con mi equipo</option>
+      <option>Escuchar emocionalmente antes de resolver</option>
+      <option>Preguntar qué necesita el otro de mí</option>
+    </select>
+    <textarea class="pledge-textarea" placeholder="¿Qué acción concreta harás esta semana? (opcional)" id="pledgeAction"></textarea>
+    <button class="pledge-btn" onclick="submitPledge()">FIRMO MI COMPROMISO</button>
+    <div class="success-msg" id="pledgeMsg">🏃 ¡Estás en la pista! La carrera comienza el lunes.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-logo">Nexa<span>Digital</span></div>
+  <p>Campaña Interna · Resiliencia & Empatía · 2025</p>
+  <p>Inspirado en McFarland USA · HBR: Coutu & Goleman</p>
+</footer>
+
+<script>
+  function selectBtn(btn, group) {
+    document.querySelectorAll(`#${group} .q-btn`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  function selectScale(dot, group) {
+    document.querySelectorAll(`#${group} .scale-dot`).forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  }
+  function submitSurvey() {
+    document.getElementById('successMsg').style.display = 'block';
+    document.querySelector('.submit-btn').style.display = 'none';
+    document.querySelector('.submit-btn').disabled = true;
+  }
+  function submitPledge() {
+    const name = document.getElementById('pledgeName').value.trim();
+    if (!name) { document.getElementById('pledgeName').style.borderBottomColor = '#e83a2a'; return; }
+    document.getElementById('pledgeMsg').style.display = 'block';
+    document.querySelector('.pledge-btn').style.display = 'none';
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pillar, .poster-card, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
